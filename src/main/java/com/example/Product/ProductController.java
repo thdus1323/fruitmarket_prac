@@ -42,4 +42,19 @@ public class ProductController {
         return "product/detail";
     }
 
+    //상품 수정하기
+    @GetMapping("/product/{productId}/update-form")
+    public String updateForm(@PathVariable Integer productId, HttpServletRequest request){
+        Product product = productService.findById(productId);
+        request.setAttribute("product", product);
+        return "/product/update-form";
+    }
+
+    @PostMapping("/product/{productId}/update")
+    public String update(@PathVariable Integer productId, ProductRequest.UpdateDTO requestDTO){
+        productService.changeProduct(productId,requestDTO);
+        System.out.println("123");
+        return "redirect:/product";
+    }
+
 }

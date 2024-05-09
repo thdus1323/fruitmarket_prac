@@ -4,10 +4,16 @@ import lombok.Data;
 
 public class ProductRequest {
     @Data
-    public class SaveDTO {
+    public static class SaveDTO {
         private String productName;
         private Integer productPrice;
         private Integer productQty;
 
+    }
+
+    @Data
+    public static class UpdateDTO {
+        private Integer productPrice;
+        private Integer productQty;
     }
 }

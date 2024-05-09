@@ -33,4 +33,14 @@ public class ProductService {
         return new ProductResponse.DetailDTO(product);
     }
 
+    public Product findById(Integer productId) {
+        Product product = productRepository.findById(productId);
+        return product;
+    }
+
+    //상품 수정
+    @Transactional
+    public void changeProduct(Integer productId, ProductRequest.UpdateDTO requestDTO) {
+        productRepository.updateByProId(productId,requestDTO);
+    }
 }

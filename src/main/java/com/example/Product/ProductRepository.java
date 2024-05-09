@@ -35,4 +35,12 @@ select * from product_tb order by product_id desc
         query.setParameter(1,productId);
         return (Product) query.getSingleResult();
     }
+
+    public void updateByProId(Integer productId, ProductRequest.UpdateDTO requestDTO) {
+        Query query = em.createNativeQuery("update product_tb set product_price=?, product_qty=? where product_id=?");
+        query.setParameter(1, requestDTO.getProductPrice());
+        query.setParameter(2, requestDTO.getProductQty());
+        query.setParameter(3, productId);
+        query.executeUpdate();
+    }
 }
