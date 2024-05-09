@@ -53,7 +53,13 @@ public class ProductController {
     @PostMapping("/product/{productId}/update")
     public String update(@PathVariable Integer productId, ProductRequest.UpdateDTO requestDTO){
         productService.changeProduct(productId,requestDTO);
-        System.out.println("123");
+        return "redirect:/product";
+    }
+
+    //상품 삭제하기
+    @PostMapping("/product/{productId}/delete")
+    public String delete(@PathVariable Integer productId){
+        productService.deleteProduct(productId);
         return "redirect:/product";
     }
 

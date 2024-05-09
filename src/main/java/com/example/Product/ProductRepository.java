@@ -21,7 +21,7 @@ select * from product_tb order by product_id desc
 
     //상품등록
     public void save(ProductRequest.SaveDTO reqDTO) {
-        Query query = em.createNativeQuery("insert into puroduct_tb(product_name, product_price, product_qty, created_at) values (?,?,?,now())");
+        Query query = em.createNativeQuery("insert into product_tb(product_name, product_price, product_qty, created_at) values (?,?,?,now())");
         query.setParameter(1, reqDTO.getProductName());
         query.setParameter(2, reqDTO.getProductPrice());
         query.setParameter(3, reqDTO.getProductQty());
@@ -41,6 +41,12 @@ select * from product_tb order by product_id desc
         query.setParameter(1, requestDTO.getProductPrice());
         query.setParameter(2, requestDTO.getProductQty());
         query.setParameter(3, productId);
+        query.executeUpdate();
+    }
+
+    public void deleteById(Integer productId) {
+        Query query = em.createNativeQuery("delete from product_tb where product_id=?");
+        query.setParameter(1,productId);
         query.executeUpdate();
     }
 }

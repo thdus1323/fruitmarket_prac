@@ -43,4 +43,9 @@ public class ProductService {
     public void changeProduct(Integer productId, ProductRequest.UpdateDTO requestDTO) {
         productRepository.updateByProId(productId,requestDTO);
     }
+
+    @Transactional
+    public void deleteProduct(Integer productId) {
+        productRepository.deleteById(productId);
+    }
 }
