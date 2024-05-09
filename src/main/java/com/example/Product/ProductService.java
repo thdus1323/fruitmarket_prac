@@ -27,4 +27,10 @@ public class ProductService {
         productRepository.save(reqDTO);
     }
 
+    //상품 상세보기
+    public ProductResponse.DetailDTO getProductDetail(Integer productId){
+        Product product = productRepository.findById(productId);
+        return new ProductResponse.DetailDTO(product);
+    }
+
 }
