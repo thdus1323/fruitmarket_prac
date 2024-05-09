@@ -1,0 +1,26 @@
+{{> layout/header}}
+<div class="d-flex justify-content-center" style="margin-top: 100px; margin-bottom: 100px;">
+    <div class="p-3 m-3" style="width: 300px;">
+        <img src="/images/banana.jpg" width="300" height="300">
+    </div>
+    <div class="p-3 m-3" style="width: 300px;" >
+        <div class="mb-3 mt-3">
+            상 품 명 : <input name="productName" type="text" class="form-control" value="{{product.productName}}" readonly>
+        </div>
+        <div class="mb-3 mt-3">
+            상품가격 : <input name="productPrice" type="number" class="form-control" value="{{product.productPrice}}" readonly>
+        </div>
+        <div class="mb-3 mt-3">
+            상품수량 : <input name="productQty" type="number" class="form-control" value="{{product.productQty}}" readonly>
+        </div>
+        <div class="d-flex justify-content-center">
+            <span><a href="/product/{{productId}}/update-form" class="btn btn-primary mt-3">수정하기</a></span>
+            <span><form action="/product/{{product.productId}}/delete" method="post">
+                    <button class="btn btn-danger mt-3">삭제하기</button>
+                </form>
+                </span>
+        </div>
+    </div>
+
+</div>
+{{> layout/footer}}
