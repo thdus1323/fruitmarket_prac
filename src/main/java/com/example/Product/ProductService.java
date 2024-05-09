@@ -3,6 +3,7 @@ package com.example.Product;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -18,6 +19,12 @@ public class ProductService {
      return productRepository.findAll().stream()
              .map(product -> new ProductResponse.ListDTO(product))
              .collect(Collectors.toList());
+    }
+
+    //상품 등록하기
+    @Transactional
+    public void addProduct(ProductRequest.SaveDTO reqDTO){
+        productRepository.save(reqDTO);
     }
 
 }
