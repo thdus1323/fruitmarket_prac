@@ -16,15 +16,16 @@ DB >> Repository >> Service >> Controller >> 고객
 
 ⭐ 중요 특징
 
-Repository : 쿼리
+1. Repository : 쿼리
 💫중요 쿼리(”” 편의상 생략)
 
-Update 해당_tb set 인수=?, … where id=?
-Insert into 해당_tb(인수들, created_at) values(?,?…,now())
-delete from 해당_tb where id=?
-select * from 해당_tb order by id desc
-Service : 연결, 서비스,
--transitional(안으로 보면 2가지 정도의 단계이나 밖에서 봤을 때 하나의 일 ⇒ 그래서 잠깐 멈춰,일을 동기적으로? 순차적으로 해결)
+**Update 해당_tb set 인수=?, … where id=?**
+**Insert into 해당_tb(인수들, created_at) values(?,?…,now())**
+**delete from 해당_tb where id=?**
+**select * from 해당_tb order by id desc**
+
+2. Service : 연결, 서비스,
+-transitional(**안으로 보면 2가지 정도의 단계**이나 밖에서 봤을 때 **하나의 일** ⇒ **그래서 잠깐 멈춰,일을 동기적으로? 순차적으로 해결**)
 
 Controller 요청에 대한 뷰 반환 및 길잡이
 -Postmapping : 자료 서버에 입력/생성
