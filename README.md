@@ -20,9 +20,13 @@ DB >> Repository >> Service >> Controller >> 고객
 💫중요 쿼리(”” 편의상 생략)
 
 **Update 해당_tb set 인수=?, … where id=?**
+
 **Insert into 해당_tb(인수들, created_at) values(?,?…,now())**
+
 **delete from 해당_tb where id=?**
+
 **select * from 해당_tb order by id desc**
+
 
 2. Service : 연결, 서비스,
 -transitional(**안으로 보면 2가지 정도의 단계**이나 밖에서 봤을 때 **하나의 일** ⇒ **그래서 잠깐 멈춰,일을 동기적으로? 순차적으로 해결**)
