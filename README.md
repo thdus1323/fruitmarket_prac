@@ -4,11 +4,11 @@
 
       이름 : gwaill nara / 과일나라
 
-    ** 중요 흐름 **
+     < 중요 흐름 >
 
       요청 >> controller >> Service >> Repository >> DB
 
-    ** 작업순서 **
+     < 작업순서 >
 
       DB >> **Repository >> Service >> Controller >>** 고객
 
