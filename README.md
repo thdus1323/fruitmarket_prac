@@ -31,32 +31,33 @@ DB >> Repository >> Service >> Controller >> 고객
 2. Service : 연결, 서비스,
 -transitional(**안으로 보면 2가지 정도의 단계**이나 밖에서 봤을 때 **하나의 일** ⇒ **그래서 잠깐 멈춰,일을 동기적으로? 순차적으로 해결**)
 
-Controller 요청에 대한 뷰 반환 및 길잡이
+3. Controller 요청에 대한 뷰 반환 및 길잡이
 -Postmapping : 자료 서버에 입력/생성
 
 -getmapping : 자료 서버에 요청
 
-1단계 순서 및 중요 내용 정리
-프로젝트 생성 및 환경설정
+## 1단계 순서 및 중요 내용 정리
+1. 프로젝트 생성 및 환경설정
 -의존
 
 -야물 및 테이블 생성
 
 -MySQL Workbench에 데이터베이스(fruitmarket) 생성
 
-view 생성 및 view 연결
+2. view 생성 및 view 연결
 -뷰/페이지에 따른 순서보다 기능별 생성에 따른 순서를 따르는 것이 디버깅하기 쉽다.
 
 -해당 뷰와 기능별 url 연결, 입력시켜주기.
 
-메인페이지 : 상품목록보기
-Screenshot_1
+3.메인페이지 : 상품목록보기
+![image](https://github.com/thdus1323/fruitmarket_prac/assets/153582422/f102f2a7-0a36-4533-b7bc-be72df855248)
+
 
 (1) Repository
 
 -제품을 리스트로 담아서 다 가져와
 
-    public List<Product> findAll() {
+       public List<Product> findAll() {
         Query query = em.createNativeQuery("select * from product_tb order by id desc", Product.class);
         return query.getResultList();
     }
